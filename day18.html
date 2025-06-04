@@ -75,11 +75,14 @@
       render();
     }
 
-    function saveDay() {
-      localStorage.setItem(exercisesKey, JSON.stringify(exercises));
-      localStorage.setItem(notesKey, document.getElementById("notes").value);
-      localStorage.setItem(completedKey, "true");
-    }
+  function saveDay() {
+  localStorage.setItem(exercisesKey, JSON.stringify(exercises));
+  const notes = document.getElementById("notes").value;
+  localStorage.setItem(notesKey, notes); // This line ensures notes get saved
+  localStorage.setItem(completedKey, "true");
+  alert("Workout saved!");
+}
+
 
     let seconds = 0, interval;
     function updateTimer() {
