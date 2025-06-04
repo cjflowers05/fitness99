@@ -140,17 +140,17 @@
       restEditor.appendChild(restCell);
     }
 
-    const summaryEl = document.getElementById("todaySummary");
     const summaryKey = `exercises-${todayNum}`;
-    const notesKey = `notes-${todayNum}`;
-    const workout = JSON.parse(localStorage.getItem(summaryKey) || "null");
-    const notes = localStorage.getItem(notesKey);
+const notesKey = `notes-${todayNum}`;
+const workout = JSON.parse(localStorage.getItem(summaryKey) || "null");
+const notes = localStorage.getItem(notesKey);
 
-    if (workout && workout.length) {
-      summaryEl.innerHTML = `<ul>${workout.map(e => `<li>${e.name}</li>`).join('')}</ul>` + (notes ? `<p><strong>Notes:</strong><br>${notes}</p>` : "");
-    } else {
-      summaryEl.textContent = "No workouts currently added";
-    }
+if (workout && workout.length) {
+  summaryEl.innerHTML = `<ul>${workout.map(e => `<li>${e.name}</li>`).join('')}</ul>` + (notes ? `<p><strong>Notes:</strong><br>${notes}</p>` : "");
+} else {
+  summaryEl.textContent = "No workouts currently added";
+}
+
   </script>
 </body>
 </html>
